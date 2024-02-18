@@ -1,0 +1,336 @@
+body, h1, p, button {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: Sixtyfour;
+    overflow: hidden;
+  }
+
+  video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the video behind other elements */
+  }
+  
+  body {
+    font-family: Sixtyfour;
+    color: #00aaff;
+    font-size: 20px;
+    background: url('BgImgs/DifficultyPage.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  #main {
+    font-family: Sixtyfour;
+    max-width: 600px;
+    height: 100vh;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+  }
+  
+  h1 {
+    font-family: forte;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-family: Sixtyfour;
+  }
+  
+  #ins {
+      text-align: center;
+      color: #ffffff;
+  }
+  
+  .ui {
+      display: grid;
+      grid-template-rows: repeat(5, 80px); 
+      grid-gap: 5;
+      text-align: center;
+      position: relative;
+  }
+  
+  .row {
+      display: grid;
+      grid-template-columns: repeat(6, 98px);
+      grid-gap: 5px;
+      position: relative;
+  }
+  
+  .square {
+      align-items: center;
+      width: 75px;
+      height: 65px;
+      border: 3px solid #1A1A1A; 
+      font-size: 65px;
+      font-stretch: normal;
+      cursor: pointer;
+      position: relative;
+      font-family: Sixtyfour;
+      color: #ffffff;
+  }
+  
+  .square:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      background-color: #45a049;
+      transform: translateY(-2px);
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF0000;
+    border: 2px solid #1A1A1A;
+    border-radius: 10px;
+    padding: 10px;
+    color: #1A1A1A;
+    cursor: pointer;
+  }
+  
+  .button {
+    appearance: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 10px;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 20px 35px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    width: 200px;
+    border-radius: 15px;
+  }
+  
+  #but {
+      appearance: none;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: block;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: normal;
+      margin: 20px auto;
+      min-height: 60px;
+      min-width: 0;
+      outline: none;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      will-change: transform;
+      width: 100%;
+      background-color: #98c1d9;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 70px;
+  }
+  
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* White background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+  }
+  
+  /* Style for the round win popup */
+  #winPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+  }
+  
+  #playAgainButton {
+    display: none;
+    margin: 20px auto; /* Center the button horizontally */
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #98c1d9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #playAgainButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #but:disabled {
+      pointer-events: none;
+  }
+  
+  #but:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      background-color: #45a049;
+      transform: translateY(-2px);
+  }
+  
+  #but:active {
+      box-shadow: none;
+      transform: translateY(0);
+  }
+  
+  #print {
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+  }
+  
+  #but.neon-blue {
+      text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+    }
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  }
+    
+    .wrapper div {
+      height: 60px;
+      width: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50px;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      animation: 4s linear infinite;  
+    }
+    div .dot {
+      overflow: auto; 
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: 20%;
+      right: 20%;
+    }
+    .wrapper div:nth-child(1) {
+      top: 20%;
+      left: 20%;
+      animation: animate 8s linear infinite;
+    }
+    .wrapper div:nth-child(2) {
+      top: 60%;
+      left: 80%;
+      animation: animate 10s linear infinite;
+    }
+    .wrapper div:nth-child(3) {
+      top: 40%;
+      left: 40%;
+      animation: animate 3s linear infinite;
+    }
+    .wrapper div:nth-child(4) {
+      top: 66%;
+      left: 30%;
+      animation: animate 7s linear infinite;
+    }
+    .wrapper div:nth-child(5) {
+      top: 90%;
+      left: 10%;
+      animation: animate 9s linear infinite;
+    }
+    .wrapper div:nth-child(6) {
+      top: 30%;
+      left: 60%;
+      animation: animate 5s linear infinite;
+    }
+    .wrapper div:nth-child(7) {
+      top: 70%;
+      left: 20%;
+      animation: animate 8s linear infinite;
+    }
+    .wrapper div:nth-child(8) {
+      top: 75%;
+      left: 60%;
+      animation: animate 10s linear infinite;
+    }
+    .wrapper div:nth-child(9) {
+      top: 50%;
+      left: 50%;
+      animation: animate 6s linear infinite;
+    }
+    .wrapper div:nth-child(10) {
+      top: 45%;
+      left: 20%;
+      animation: animate 10s linear infinite;
+    }
+    .wrapper div:nth-child(11) {
+      top: 10%;
+      left: 90%;
+      animation: animate 9s linear infinite;
+    }
+    .wrapper div:nth-child(12) {
+      top: 20%;
+      left: 70%;
+      animation: animate 7s linear infinite;
+    }
+    .wrapper div:nth-child(13) {
+      top: 20%;
+      left: 20%;
+      animation: animate 8s linear infinite;
+    }
+    .wrapper div:nth-child(14) {
+      top: 60%;
+      left: 5%;
+      animation: animate 6s linear infinite;
+    }
+    .wrapper div:nth-child(15) {
+      top: 90%;
+      left: 80%;
+      animation: animate 9s linear infinite;
+    }
+    
+    
+    @keyframes animate {
+      0% {
+        transform: scale(0) translateY(0) rotate(70deg);
+      }
+      100% {
+        transform: scale(1.3) translateY(-100px) rotate(360deg);
+      }
+    }
